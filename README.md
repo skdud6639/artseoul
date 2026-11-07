@@ -6,10 +6,15 @@ Google AI Studio에서 제작한 React + TypeScript + Vite 갤러리 웹사이�
 
 Node.js 22.12 이상을 권장합니다.
 
+프로젝트 폴더에서 아래 명령 하나만 실행하세요.
+
 ```sh
-npm ci
-npm run dev
+npm start
 ```
+
+의존성을 잠금 파일 기준으로 설치한 뒤 3000번 포트에서 개발 서버를 실행하고 브라우저를 엽니다.
+최초 실행과 패키지 설치에는 인터넷 연결이 필요합니다. 종료는 터미널에서 `Ctrl+C`를 누르세요.
+이미 패키지가 설치되어 있다면 `npm run dev`로 설치 과정을 생략할 수 있습니다.
 
 개발 서버: http://localhost:3000
 

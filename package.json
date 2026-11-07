@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "npm ci --include=dev && npm run dev -- --open",
     "dev": "vite --port=3000 --strictPort --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
