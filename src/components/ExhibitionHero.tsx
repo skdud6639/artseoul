@@ -20,7 +20,7 @@ export default function ExhibitionHero({
       id="exhibition"
       className="relative bg-[#fbfbfb] pt-0 pb-20 md:pb-28"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="w-full px-6 md:px-10 lg:px-12">
         {/* Grid Layout: Text Content left, Huge visual representation right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-0">
           {/* Exhibition Hero Image (7 Columns - Placed first) */}
