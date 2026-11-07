@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Menu, X } from 'lucide-react';
 import GalleryLogo from './GalleryLogo';
 
 interface HeaderProps {
@@ -16,124 +16,76 @@ export default function Header({
   scrollToSection,
 }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    { id: 'exhibition', ko: '현재 전시', en: 'Current Exhibition' },
-    { id: 'artworks', ko: '출품작', en: 'Artworks' },
+  const items = [
+    { id: 'exhibition', ko: '전시', en: 'Exhibition' },
+    { id: 'artworks', ko: '작품', en: 'Artworks' },
     { id: 'artists', ko: '작가', en: 'Artists' },
-    { id: 'viewing-room', ko: '프라이빗 뷰잉룸', en: 'Viewing Room' },
-    { id: 'info', ko: '갤러리 안내', en: 'Information' },
+    { id: 'info', ko: '방문 안내', en: 'Visit' },
   ];
-
+  const navigate = (id: string) => {
+    scrollToSection(id);
+    setIsMenuOpen(false);
+  };
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-      <div className="w-full px-6 md:px-10 lg:px-12 h-20 flex items-center justify-between">
-        {/* Brand Logo - ART SEOUL */}
-        <div
-          onClick={() => scrollToSection('exhibition')}
-          className="cursor-pointer group flex items-center select-none py-1 transition-opacity hover:opacity-80"
-          title="ART SEOUL"
+    <header className="gallery-header">
+      <a className="skip-link" href="#main">
+        {language === 'ko' ? '본문으로 이동' : 'Skip to content'}
+      </a>
+      <button
+        className="brand"
+        onClick={() => navigate('exhibition')}
+        aria-label="ART SEOUL — Home"
+      >
+        <GalleryLogo className="brand-logo" />
+      </button>
+      <nav
+        className="desktop-nav"
+        aria-label={language === 'ko' ? '주 메뉴' : 'Main navigation'}
+      >
+        {items.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => navigate(item.id)}
+            aria-current={activeSection === item.id ? 'location' : undefined}
+          >
+            {language === 'ko' ? item.ko : item.en}
+          </button>
+        ))}
+      </nav>
+      <div className="header-tools">
+        <button
+          onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
+          className="language-switch"
         >
-          <GalleryLogo className="h-5 sm:h-6 md:h-7 w-auto text-neutral-900 transition-colors duration-300" />
-        </div>
-
-        {/* Right Section: Desktop Navigation + Language/Controls with refined David Zwirner spacing */}
-        <div className="hidden md:flex items-center space-x-7 lg:space-x-9">
-          <nav className="flex items-center space-x-6 lg:space-x-8">
-            {menuItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`font-sans text-[12px] lg:text-[13px] font-normal tracking-wide transition-colors duration-200 relative py-2 ${
-                    isActive
-                      ? 'text-neutral-950 font-medium'
-                      : 'text-neutral-700 hover:text-neutral-950'
-                  }`}
-                >
-                  {language === 'ko' ? item.ko : item.en}
-                </button>
-              );
-            })}
-          </nav>
-
-          {/* Right Controls - Language & Quick Contact */}
-          <div className="flex items-center space-x-4 pl-3 border-l border-neutral-200">
-            <button
-              onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
-              className="font-sans text-[12px] lg:text-[13px] text-neutral-700 hover:text-neutral-950 transition-colors"
-            >
-              {language === 'ko' ? 'ENG' : '한글'}
-            </button>
-
-            <button
-              onClick={() => scrollToSection('inquiry')}
-              className="bg-neutral-950 text-white font-sans text-[11px] font-medium tracking-[0.1em] uppercase px-4 py-2 transition-all duration-200 hover:bg-neutral-800"
-            >
-              {language === 'ko' ? '문의' : 'Inquire'}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="flex md:hidden items-center space-x-4">
-          <button
-            onClick={() => setLanguage(language === 'ko' ? 'en' : 'ko')}
-            className="font-sans text-[10px] font-bold tracking-wider text-neutral-500 hover:text-neutral-900 transition-colors border border-neutral-200 px-2 py-1 rounded"
-          >
-            {language === 'ko' ? 'EN' : 'KO'}
-          </button>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex flex-col space-y-1.5 justify-center items-end w-6 h-6 focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'w-6 translate-y-2 rotate-45' : 'w-6'}`}
-            />
-            <span
-              className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'opacity-0 w-0' : 'w-4'}`}
-            />
-            <span
-              className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'w-6 -translate-y-[7px] -rotate-45' : 'w-5'}`}
-            />
-          </button>
-        </div>
+          {language === 'ko' ? 'ENG' : '한글'}
+        </button>
+        <button className="header-contact" onClick={() => navigate('info')}>
+          {language === 'ko' ? '문의' : 'Contact'}{' '}
+          <span aria-hidden="true">↗</span>
+        </button>
+        <button
+          className="mobile-menu-button"
+          aria-label={language === 'ko' ? '메뉴 열기 / 닫기' : 'Toggle menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={23} /> : <Menu size={23} />}
+        </button>
       </div>
-
-      {/* Mobile Drawer Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-200 shadow-sm transition-all duration-300 z-40 animate-fade-in-down">
-          <div className="px-6 py-6 space-y-4 flex flex-col">
-            {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  scrollToSection(item.id);
-                  setIsMenuOpen(false);
-                }}
-                className={`text-left font-sans text-xs font-semibold tracking-[0.15em] uppercase py-2 border-b border-gray-50 ${
-                  activeSection === item.id
-                    ? 'text-neutral-900 pl-2 border-neutral-900'
-                    : 'text-neutral-500'
-                }`}
-              >
-                {language === 'ko' ? item.ko : item.en}
-              </button>
-            ))}
-
-            <button
-              onClick={() => {
-                scrollToSection('inquiry');
-                setIsMenuOpen(false);
-              }}
-              className="bg-neutral-950 text-white font-sans text-[11px] font-semibold tracking-[0.15em] uppercase w-full py-3.5 text-center transition-all duration-300 hover:bg-neutral-800"
-            >
-              {language === 'ko' ? '작품 및 전시 문의' : 'Inquire'}
+        <nav
+          id="mobile-nav"
+          className="mobile-nav"
+          aria-label={language === 'ko' ? '모바일 메뉴' : 'Mobile navigation'}
+        >
+          {items.map((item) => (
+            <button key={item.id} onClick={() => navigate(item.id)}>
+              {language === 'ko' ? item.ko : item.en}
+              <span aria-hidden="true">↗</span>
             </button>
-          </div>
-        </div>
+          ))}
+        </nav>
       )}
     </header>
   );
