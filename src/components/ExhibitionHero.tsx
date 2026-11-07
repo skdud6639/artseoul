@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Exhibition } from '../types';
 import { ArrowRight, Clock, MapPin, Calendar } from 'lucide-react';
 
@@ -144,12 +145,12 @@ export default function ExhibitionHero({
                 />
               </button>
 
-              <a
-                href="#info"
+              <Link
+                to="/visit"
                 className="border border-neutral-300 text-neutral-800 hover:border-neutral-900 hover:text-neutral-900 font-sans text-xs font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-300 flex items-center justify-center"
               >
                 {language === 'ko' ? '오시는 길' : 'Visit Gallery'}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

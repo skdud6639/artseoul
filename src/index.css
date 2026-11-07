@@ -72,3 +72,94 @@ body {
 .animate-fade-in-down {
   animation: fadeInDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Artist directory: names form a centered single-column list on every screen. */
+.artists-directory {
+  padding: 65px 24px 120px;
+  text-align: center;
+  font-family: var(--font-sans);
+}
+.artists-directory h1 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 64px;
+}
+.artists-directory ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.artists-directory li {
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.04em;
+  padding: 12px 0;
+}
+.private-artists {
+  margin-top: 55px;
+}
+.private-artists-label {
+  margin-bottom: 24px;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.private-artist-name {
+  display: inline-block;
+  filter: blur(12px);
+  opacity: 0.5;
+  user-select: none;
+  pointer-events: none;
+}
+.home-page-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 40px 48px 64px;
+  gap: 32px;
+}
+.home-page-links a {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+}
+.skip-to-content {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: white;
+  border: 1px solid black;
+}
+.skip-to-content:focus {
+  top: 12px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #34506a;
+  outline-offset: 4px;
+}
+@media (max-width: 640px) {
+  .artists-directory {
+    padding-top: 45px;
+    padding-bottom: 75px;
+  }
+  .artists-directory h1 {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  .artists-directory li {
+    padding: 10px 0;
+  }
+  .home-page-links {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 12px;
+  }
+}
