@@ -3,7 +3,10 @@ interface GalleryLogoProps {
   color?: string;
 }
 
-export default function GalleryLogo({ className = "h-5 sm:h-6 md:h-7 w-auto", color = "currentColor" }: GalleryLogoProps) {
+export default function GalleryLogo({
+  className = 'h-5 sm:h-6 md:h-7 w-auto',
+  color = 'currentColor',
+}: GalleryLogoProps) {
   return (
     <svg
       viewBox="0 0 484 60"
@@ -20,12 +23,20 @@ export default function GalleryLogo({ className = "h-5 sm:h-6 md:h-7 w-auto", co
         - Uniform stroke width & cap-height
         - Exact letter proportions & elegant wide tracking
       */}
-      <g stroke={color} strokeWidth="2.8" strokeLinecap="square" strokeLinejoin="miter">
+      <g
+        stroke={color}
+        strokeWidth="2.8"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      >
         {/* 1. ∧ (A Chevron without crossbar) */}
         <path d="M 12 46 L 29 14 L 46 46" strokeLinecap="round" />
 
         {/* 2. R */}
-        <path d="M 76 46 V 14 H 96 C 105 14 111 19 111 27 C 111 35 105 40 96 40 H 76" strokeLinejoin="round" />
+        <path
+          d="M 76 46 V 14 H 96 C 105 14 111 19 111 27 C 111 35 105 40 96 40 H 76"
+          strokeLinejoin="round"
+        />
         <path d="M 94 40 L 110 46" />
 
         {/* 3. T */}
@@ -45,7 +56,10 @@ export default function GalleryLogo({ className = "h-5 sm:h-6 md:h-7 w-auto", co
         <circle cx="332" cy="30" r="16" />
 
         {/* 7. U */}
-        <path d="M 374 14 V 34 C 374 43 381 46 388 46 C 395 46 402 43 402 34 V 14" strokeLinejoin="round" />
+        <path
+          d="M 374 14 V 34 C 374 43 381 46 388 46 C 395 46 402 43 402 34 V 14"
+          strokeLinejoin="round"
+        />
 
         {/* 8. L */}
         <path d="M 430 14 V 46 H 454" />

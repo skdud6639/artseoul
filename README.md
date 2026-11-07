@@ -4,7 +4,7 @@ Google AI Studio에서 제작한 React + TypeScript + Vite 갤러리 웹사이�
 
 ## 로컬 실행
 
-Node.js 22.12 이상을 권장합니다.
+Node.js 24를 사용합니다. 기준 버전은 `.nvmrc`에 기록되어 있습니다.
 
 프로젝트 폴더에서 아래 명령 하나만 실행하세요.
 
@@ -26,11 +26,25 @@ npm start
 
 ```sh
 npm run lint
+npm run format:check
+npm run typecheck
 npm run build
 npm run preview
 ```
 
 정적 배포 파일은 `dist/`에 생성됩니다. 이 저장소 반영만으로 웹사이트가 자동 배포되지는 않습니다.
+
+## 코드 컨벤션
+
+`seoulwhanghoo` 프런트엔드와 동일하게 Prettier(작은따옴표, 후행 쉼표), 타입 기반 ESLint, React Hooks 및 React Refresh 규칙을 적용합니다.
+
+- `npm run format`: 포맷 자동 수정
+- `npm run lint:fix`: 자동 수정 가능한 린트 문제 수정
+- `npm run lint`: 경고를 포함한 린트 위반 검사
+- `npm run format:check`: 포맷 검사
+- `npm run typecheck`: 엄격한 TypeScript 타입 검사
+
+GitHub Actions는 main push와 main 대상 PR에서 린트·포맷·타입·빌드를 검사합니다.
 
 ## 포함된 기능
 

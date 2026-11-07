@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe } from 'lucide-react';
+
 import GalleryLogo from './GalleryLogo';
 
 interface HeaderProps {
@@ -9,7 +9,12 @@ interface HeaderProps {
   scrollToSection: (id: string) => void;
 }
 
-export default function Header({ language, setLanguage, activeSection, scrollToSection }: HeaderProps) {
+export default function Header({
+  language,
+  setLanguage,
+  activeSection,
+  scrollToSection,
+}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
@@ -24,8 +29,8 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
       <div className="w-full px-6 md:px-10 lg:px-12 h-20 flex items-center justify-between">
         {/* Brand Logo - ART SEOUL */}
-        <div 
-          onClick={() => scrollToSection('exhibition')} 
+        <div
+          onClick={() => scrollToSection('exhibition')}
           className="cursor-pointer group flex items-center select-none py-1 transition-opacity hover:opacity-80"
           title="ART SEOUL"
         >
@@ -42,7 +47,9 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`font-sans text-[12px] lg:text-[13px] font-normal tracking-wide transition-colors duration-200 relative py-2 ${
-                    isActive ? 'text-neutral-950 font-medium' : 'text-neutral-700 hover:text-neutral-950'
+                    isActive
+                      ? 'text-neutral-950 font-medium'
+                      : 'text-neutral-700 hover:text-neutral-950'
                   }`}
                 >
                   {language === 'ko' ? item.ko : item.en}
@@ -59,7 +66,7 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
             >
               {language === 'ko' ? 'ENG' : '한글'}
             </button>
-            
+
             <button
               onClick={() => scrollToSection('inquiry')}
               className="bg-neutral-950 text-white font-sans text-[11px] font-medium tracking-[0.1em] uppercase px-4 py-2 transition-all duration-200 hover:bg-neutral-800"
@@ -82,9 +89,15 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
             className="flex flex-col space-y-1.5 justify-center items-end w-6 h-6 focus:outline-none"
             aria-label="Toggle menu"
           >
-            <span className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'w-6 translate-y-2 rotate-45' : 'w-6'}`} />
-            <span className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'opacity-0 w-0' : 'w-4'}`} />
-            <span className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'w-6 -translate-y-[7px] -rotate-45' : 'w-5'}`} />
+            <span
+              className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'w-6 translate-y-2 rotate-45' : 'w-6'}`}
+            />
+            <span
+              className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'opacity-0 w-0' : 'w-4'}`}
+            />
+            <span
+              className={`h-[1px] bg-neutral-950 transition-all duration-300 ${isMenuOpen ? 'w-6 -translate-y-[7px] -rotate-45' : 'w-5'}`}
+            />
           </button>
         </div>
       </div>
@@ -101,13 +114,15 @@ export default function Header({ language, setLanguage, activeSection, scrollToS
                   setIsMenuOpen(false);
                 }}
                 className={`text-left font-sans text-xs font-semibold tracking-[0.15em] uppercase py-2 border-b border-gray-50 ${
-                  activeSection === item.id ? 'text-neutral-900 pl-2 border-neutral-900' : 'text-neutral-500'
+                  activeSection === item.id
+                    ? 'text-neutral-900 pl-2 border-neutral-900'
+                    : 'text-neutral-500'
                 }`}
               >
                 {language === 'ko' ? item.ko : item.en}
               </button>
             ))}
-            
+
             <button
               onClick={() => {
                 scrollToSection('inquiry');
