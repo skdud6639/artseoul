@@ -173,7 +173,7 @@ export default function InteractiveViewingRoom({
                     <img
                       src={art.image}
                       alt=""
-                      className="w-10 h-10 object-cover rounded-xs"
+                      className="w-10 h-10 object-contain rounded-xs"
                       referrerPolicy="no-referrer"
                     />
                     <div className="flex-1 min-w-0">
@@ -301,7 +301,7 @@ export default function InteractiveViewingRoom({
                   <img
                     src={selectedArtwork.image}
                     alt={selectedArtwork.titleEn}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     referrerPolicy="no-referrer"
                   />
                   {/* Elegant lighting reflection shadow */}

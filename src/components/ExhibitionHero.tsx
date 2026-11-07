@@ -41,6 +41,8 @@ export default function ExhibitionHero({
               ? `${exhibition.title} 전시 이미지`
               : `${exhibition.titleEn}, exhibition image`
           }
+          width={1254}
+          height={1254}
           fetchPriority="high"
         />
         <span className="hero-image-label">ART SEOUL / EXHIBITIONS</span>
