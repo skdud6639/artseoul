@@ -43,8 +43,8 @@ section {
   scroll-margin-top: 100px;
 }
 .page-gutter {
-  padding-left: clamp(24px, 4vw, 72px);
-  padding-right: clamp(24px, 4vw, 72px);
+  padding-left: clamp(12px, 1.7vw, 24px);
+  padding-right: clamp(12px, 1.7vw, 24px);
 }
 .muted {
   color: #666;
@@ -75,7 +75,7 @@ section {
   gap: 35px;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(24px, 4vw, 72px);
+  padding: 0 clamp(12px, 1.7vw, 24px);
   background: white;
   position: sticky;
   top: 0;
@@ -128,8 +128,9 @@ section {
 }
 .hero-image {
   position: relative;
-  height: min(66vw, 680px);
-  min-height: 400px;
+  margin: 20px 24px 0;
+  width: calc(100% - 48px);
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #dedad3;
 }
@@ -142,7 +143,7 @@ section {
 .hero-image-label {
   position: absolute;
   bottom: 23px;
-  left: clamp(24px, 4vw, 72px);
+  left: clamp(12px, 1.7vw, 24px);
   color: white;
   background: #171717d9;
   padding: 7px 10px;
@@ -617,8 +618,9 @@ html:has(dialog[open]) {
     font-size: 19px;
   }
   .hero-image {
-    height: 470px;
-    min-height: 0;
+    margin: 12px 12px 0;
+    width: calc(100% - 24px);
+    aspect-ratio: 4 / 5;
   }
   .hero-image img {
     object-position: 47% center;
