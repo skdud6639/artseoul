@@ -1,0 +1,6 @@
+{
+  "name": "서울아트",
+  "description": "ART kim SEOUL 현대 미술 갤러리 공식 웹사이트",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

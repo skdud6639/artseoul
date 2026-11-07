@@ -1,0 +1,39 @@
+# 서울아트 · Seoul Art Gallery
+
+Google AI Studio에서 제작한 React + TypeScript + Vite 갤러리 웹사이트입니다.
+
+## 로컬 실행
+
+Node.js 22.12 이상을 권장합니다.
+
+```sh
+npm ci
+npm run dev
+```
+
+개발 서버: http://localhost:3000
+
+## 검증 및 빌드
+
+```sh
+npm run lint
+npm run build
+npm run preview
+```
+
+정적 배포 파일은 `dist/`에 생성됩니다. 이 저장소 반영만으로 웹사이트가 자동 배포되지는 않습니다.
+
+## 포함된 기능
+
+- 한국어 / 영어 전환
+- 전시 소개, 작품 목록 및 상세 보기, 작가 소개
+- 작품과 벽 색상 선택 및 인물 크기 비교가 가능한 가상 뷰잉룸
+- 갤러리 안내와 작품 문의 폼
+
+문의 폼은 현재 화면 시연용입니다. 제출하면 브라우저에서 임시 문의 번호를 생성하며, 서버 저장이나 이메일 발송은 하지 않습니다. 소셜 링크도 실제 계정 연결이 필요합니다.
+
+현재 앱은 Gemini API를 호출하지 않으므로 로컬 실행에 API 키가 필요하지 않습니다. `.env.example`은 AI Studio 내보내기에 포함된 예시 파일입니다.
+
+## 원본
+
+https://aistudio.google.com/apps/b917222e-a6ac-419e-93cd-890b49a347ae
