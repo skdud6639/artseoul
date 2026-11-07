@@ -41,6 +41,7 @@ http://localhost:3000 에서 확인합니다. 개발 서버를 켜 둔 상태에
 npm run lint
 npm run format:check
 npm run typecheck
+npm test
 npm run build
 npm run preview
 ```
@@ -75,6 +76,7 @@ Vite 개발 서버에서는 경로 새로고침을 기본 지원합니다. 정�
 - `npm run lint`: 경고를 포함한 린트 위반 검사
 - `npm run format:check`: 포맷 검사
 - `npm run typecheck`: 엄격한 TypeScript 타입 검사
+- `npm test`: 데스크톱·모바일 메뉴 반복 이동 시 헤더 중복 방지 회귀 검사
 
 GitHub Actions는 main push와 main 대상 PR에서 린트·포맷·타입·빌드를 검사합니다.
 

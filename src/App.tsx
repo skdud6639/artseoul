@@ -18,12 +18,12 @@ export default function App() {
       <a href="#main-content" className="skip-to-content">
         {language === 'ko' ? '본문으로 이동' : 'Skip to content'}
       </a>
-      <Header key={pathname} language={language} setLanguage={setLanguage} />
+      <Header language={language} setLanguage={setLanguage} />
       <main
         id="main-content"
         tabIndex={-1}
         className="flex-grow outline-none"
-        key={pathname}
+        key={`page:${pathname}`}
       >
         <Routes>
           <Route path="/" element={<HomePage language={language} />} />
