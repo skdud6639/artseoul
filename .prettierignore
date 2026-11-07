@@ -4,3 +4,7 @@ build/
 coverage/
 package-lock.json
 bun.lock
+
+.data/
+test-results/
+playwright-report/
