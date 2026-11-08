@@ -14,7 +14,10 @@
     "typecheck": "tsc --noEmit",
     "format:check": "prettier . --check",
     "format": "prettier . --write",
-    "test": "vitest run"
+    "test": "vitest run && npm run test:sync",
+    "test:sync": "node --test scripts/sync-repository.test.mjs",
+    "sync": "node scripts/sync-local.mjs",
+    "dev:latest": "npm run sync && npm start"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
