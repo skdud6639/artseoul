@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@500&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -162,4 +162,16 @@ button:focus-visible {
     padding: 24px;
     gap: 12px;
   }
+}
+
+/* A clean Korean sans-serif, scoped to the exhibition title. */
+.exhibition-title {
+  font-family:
+    'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.045em;
+  color: #111;
+  word-break: keep-all;
 }

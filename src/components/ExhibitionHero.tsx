@@ -61,7 +61,7 @@ export default function ExhibitionHero({
                   : `Solo Exhibition by ${exhibition.artistEn}`}
               </p>
 
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-neutral-900 leading-tight tracking-wide mb-4">
+              <h2 className="exhibition-title mb-4">
                 {language === 'ko' ? exhibition.title : exhibition.titleEn}
               </h2>
 
