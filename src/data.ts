@@ -14,11 +14,11 @@ export const CURRENT_EXHIBITION: Exhibition = {
   endDate: '2026. 08. 30',
   location: '서울아트 본관 (Samcheong, Seoul)',
   heroImage: '/assets/aistudio/________________________________1__60d88c58.png',
-  curatorNote: `미인에게 반하는 데 이유가 없듯, 마음에 꽂히는 걸작 앞에서는 어떤 수식어도 군더더기가 됩니다. 처음 본 순간 입 밖으로 터져 나오던 탄성, 그리고 아무도 알아보지 못했던 그 고독한 18년의 세월이 안타까워 마침내 가족으로 맞이했습니다.
+  curatorNote: `미인,미남에게 반하는 데 이유가 없듯, 마음에 꽂히는 걸작 앞에서는 어떤 수식어도 군더더기가 됩니다. 이 작품을 처음 본 순간 입 밖으로 터져 나오던 탄성, 그러나 아무도 알아보지 못해 그 고독한 18년의 세월이 안타까워 이 작품을 마침내 가족으로 맞이했습니다.
 
 저희의 컬렉팅은 거대한 자본이 있어서 시작된 것이 아닙니다. 작품성은 이토록 깊은 울림을 주는데, 단지 세상이 알아보지 못한다는 이유로 버려지고 잊힐 것만 같아 작품의 예술적 가치를 온전히 지켜내고 보존하고 싶었습니다. 그렇게 가슴으로 한 점 두 점 품기 시작했습니다.
 
-수백억에 달하는 가치와 시간, 30여 년의 여정 속에서 뼈아픈 시행착오도 많았습니다. 그것이 저희가 이 갤러리를 열게 된 진짜 이유입니다.
+수백억에 달하는 가치와 시간, 30여 년의 여정 속에서 뼈아픈 시행착오도 많았습니다. 그것이 저희가 이 갤러리를 열게 된 진짜 이유입니다. 기존갤러리와 옥션에 갈증을 느끼셨다면, 컬렉팅의 문을 두드리는 분이라면 저희가 온 몸으로 부딪쳐 얻은 영감을 아낌없이 나누고 싶습니다.
 
 작품을 통해 얻는 삶의 활력과 더불어, 미래의 가치까지 함께 소장하는 기쁨이 존재하는 세계가 있음을 알리고자 합니다. 저희의 안목으로 선별한 작품들을 만나보시기 바랍니다.`,
   curatorNoteEn: `Just as beauty needs no reason to captivate us, every adjective feels superfluous before a masterpiece that touches the heart. We remember the exclamation that escaped us at first sight. Moved by the thought of the eighteen lonely years it had gone unrecognized, we finally welcomed it into our family.
