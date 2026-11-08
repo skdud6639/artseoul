@@ -14,16 +14,20 @@ export const CURRENT_EXHIBITION: Exhibition = {
   endDate: '2026. 08. 30',
   location: '서울아트 본관 (Samcheong, Seoul)',
   heroImage: '/assets/aistudio/________________________________1__60d88c58.png',
-  curatorNote: `서울아트는 2026년 여름 기획전으로 한국 현대 단색화의 새로운 지평을 열어가고 있는 김윤우 작가의 개인전 《고요의 파동》을 개최합니다. 
+  curatorNote: `미인에게 반하는 데 이유가 없듯, 마음에 꽂히는 걸작 앞에서는 어떤 수식어도 군더더기가 됩니다. 처음 본 순간 입 밖으로 터져 나오던 탄성, 그리고 아무도 알아보지 못했던 그 고독한 18년의 세월이 안타까워 마침내 가족으로 맞이했습니다.
 
-이번 전시는 작가가 지난 수년간 탐구해 온 백색과 흑색의 단조로운 층위 속에 내포된 무한한 시각적 깊이와 정신성을 조명합니다. 김윤우의 캔버스는 단순한 물질적 표면을 넘어, 반복적인 붓질과 한지의 물성이 유기적으로 결합하여 생성해 낸 명상적 공간입니다. 
+저희의 컬렉팅은 거대한 자본이 있어서 시작된 것이 아닙니다. 작품성은 이토록 깊은 울림을 주는데, 단지 세상이 알아보지 못한다는 이유로 버려지고 잊힐 것만 같아 작품의 예술적 가치를 온전히 지켜내고 보존하고 싶었습니다. 그렇게 가슴으로 한 점 두 점 품기 시작했습니다.
 
-화면 위에 가늘게 뻗어 나가는 선과 여백의 조화는 보는 이로 하여금 내면의 깊은 침묵과 조우하게 하며, 현대 사회의 소음 속에서 잠시 멈추어 서는 정화의 시간을 선사할 것입니다. 서울아트의 정제된 공간 속에서 펼쳐지는 백색의 울림을 직접 경험해 보시기 바랍니다.`,
-  curatorNoteEn: `Seoul Art is pleased to present "Waves of Silence," a solo exhibition by Yunwoo Kim, a pioneering voice in the next generation of Korean Dansaekhwa (monochrome painting).
+수백억에 달하는 가치와 시간, 30여 년의 여정 속에서 뼈아픈 시행착오도 많았습니다. 그것이 저희가 이 갤러리를 열게 된 진짜 이유입니다.
 
-This summer exhibition highlights the profound visual depth and spiritual resonance that Kim has spent years cultivating through minimal palettes and subtle layering. His canvases transcend mere physical surfaces, becoming meditative arenas where repetitive brushstrokes integrate organically with the natural texture of traditional Korean Hanji paper.
+작품을 통해 얻는 삶의 활력과 더불어, 미래의 가치까지 함께 소장하는 기쁨이 존재하는 세계가 있음을 알리고자 합니다. 저희의 안목으로 선별한 작품들을 만나보시기 바랍니다.`,
+  curatorNoteEn: `Just as beauty needs no reason to captivate us, every adjective feels superfluous before a masterpiece that touches the heart. We remember the exclamation that escaped us at first sight. Moved by the thought of the eighteen lonely years it had gone unrecognized, we finally welcomed it into our family.
 
-The dialogue between delicate lines and expansive negative space invites viewers to encounter their own inner stillness, offering a rare moment of clarity and contemplation amidst the noise of the contemporary world. We invite you to experience the transcendent resonance of silence within our newly curated spaces.`,
+Our collecting did not begin with vast capital. These works resonated so deeply that we could not bear the thought of their being discarded and forgotten simply because the world had failed to recognize them. We wanted to protect and preserve their artistic value. And so, one work at a time, we began collecting with our hearts.
+
+Over a journey of more than thirty years, encompassing time and value measured in tens of billions of won, we have also learned through painful trial and error. That is the real reason we opened this gallery.
+
+We want to share a world where collecting brings not only the vitality that art lends to life, but also the joy of holding its future value. We invite you to discover the works we have chosen with our own discerning eyes.`,
 };
 
 export const ARTISTS: Artist[] = [

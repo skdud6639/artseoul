@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Exhibition } from '../types';
-import { ArrowRight, Clock, MapPin, Calendar } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface ExhibitionHeroProps {
   exhibition: Exhibition;
@@ -15,6 +15,10 @@ export default function ExhibitionHero({
   onExploreClick,
 }: ExhibitionHeroProps) {
   const [readMore, setReadMore] = useState(false);
+  const introductionId = useId();
+  const introduction =
+    language === 'ko' ? exhibition.curatorNote : exhibition.curatorNoteEn;
+  const [openingParagraph, ...remainingParagraphs] = introduction.split('\n\n');
 
   return (
     <section
@@ -65,51 +69,33 @@ export default function ExhibitionHero({
                 {language === 'ko' ? exhibition.artist : exhibition.artistEn}
               </p>
 
-              {/* Date, Location Metadata */}
-              <div className="space-y-4 border-t border-neutral-100 pt-8 pb-8">
-                <div className="flex items-center space-x-3 text-neutral-600">
-                  <Calendar size={15} className="text-neutral-400" />
-                  <span className="font-sans text-xs font-medium tracking-wide">
-                    {exhibition.startDate} — {exhibition.endDate}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3 text-neutral-600">
-                  <MapPin size={15} className="text-neutral-400" />
-                  <span className="font-sans text-xs font-medium tracking-wide">
-                    {language === 'ko'
-                      ? '서울아트 본관 1-2홀'
-                      : 'Main Gallery Halls 1 & 2'}
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3 text-neutral-600">
-                  <Clock size={15} className="text-neutral-400" />
-                  <span className="font-sans text-xs font-medium tracking-wide">
-                    {language === 'ko'
-                      ? '화 — 일, 10:00 - 18:00 (월요일 휴관)'
-                      : 'Tue — Sun, 10:00 AM - 6:00 PM (Closed Mondays)'}
-                  </span>
-                </div>
-              </div>
-
               {/* Curation Note (Collapsible) */}
               <div className="relative mt-2">
                 <h4 className="font-sans text-[10px] font-bold tracking-[0.15em] text-neutral-800 uppercase mb-3">
-                  {language === 'ko' ? '기획 노트' : "Curator's Note"}
+                  {language === 'ko' ? '소개글' : 'Introduction'}
                 </h4>
-                <p
-                  className={`font-sans text-[13px] text-neutral-600 leading-relaxed tracking-wide font-light whitespace-pre-line transition-all duration-500 ${
-                    readMore
-                      ? 'line-clamp-none'
-                      : 'line-clamp-4 lg:line-clamp-5'
-                  }`}
-                >
-                  {language === 'ko'
-                    ? exhibition.curatorNote
-                    : exhibition.curatorNoteEn}
+                <p className="font-sans text-[13px] text-neutral-600 leading-relaxed tracking-wide font-light">
+                  {openingParagraph}
                 </p>
+                <div
+                  id={introductionId}
+                  hidden={!readMore}
+                  className="space-y-4 mt-4"
+                >
+                  {remainingParagraphs.map((paragraph) => (
+                    <p
+                      key={paragraph}
+                      className="font-sans text-[13px] text-neutral-600 leading-relaxed tracking-wide font-light"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
 
                 <button
                   onClick={() => setReadMore(!readMore)}
+                  aria-expanded={readMore}
+                  aria-controls={introductionId}
                   className="mt-3 font-sans text-[10px] font-bold tracking-wider text-neutral-900 hover:text-neutral-500 transition-colors uppercase flex items-center space-x-1"
                 >
                   <span>
@@ -118,8 +104,8 @@ export default function ExhibitionHero({
                         ? '접기'
                         : 'Read Less'
                       : language === 'ko'
-                        ? '기획 노트 더보기'
-                        : 'Read Curation Note'}
+                        ? '소개글 더보기'
+                        : 'Read Introduction'}
                   </span>
                   <span
                     className={`transform transition-transform duration-300 ${readMore ? 'rotate-180' : ''}`}
